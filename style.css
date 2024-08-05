@@ -1,0 +1,450 @@
+@font-face {
+    font-family: 'Qualy';
+    src: url(./Qualy\ Bold.ttf);
+    font-weight: bold;
+    font-style: bold;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+body {
+    background-color: black;
+    /* background: linear-gradient(to bottom, blue, black); */
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    z-index: 1000;
+}
+
+nav a {
+    padding: 1em;
+    font-family: Qualy;
+    font-weight: 200;
+    font-size: large;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+nav > a:hover{
+    color: darkgoldenrod;
+}
+
+section {
+    height: calc(100vh);
+    scroll-snap-align: start;
+}
+
+h2{
+    color: darkgoldenrod;
+    margin: 40px 0;
+    font-family: Qualy;
+    font-size: 30px;
+    text-align: center;
+}
+
+h3{
+    color: white;
+    font-family: Qualy;
+    font-size: 20px;
+}
+
+p{
+    margin-left: 5em;
+    margin-right: 5em;
+    text-align: justify;
+    font-size: 20px;
+}
+
+#home {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    height: 100vh;
+}
+
+#aboutMe {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+}
+
+#home > h1 {
+    font-family: Qualy;
+    font-size: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;    
+}
+
+.shiny-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, darkgoldenrod, transparent);
+    animation: shine 3s infinite;
+  }
+  
+  @keyframes shine {
+    0% {
+      left: -100%;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+#aboutMe, #songs, #albums{
+    display: flex;
+    flex-direction: row;
+}
+
+#aboutMe > div:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 65vw;
+    height: 100vh;
+    background-color: black;
+    font-family: "Josefin Sans", sans-serif;
+    height: 100%;
+}
+
+#aboutMe > div:nth-child(2) {
+    background-image: url('./fotos/cantando.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    width: 50vw;
+    height: 100vh;
+    mask-image: linear-gradient(to left, black 80%, transparent); /* Standard */
+    height: 100%;
+}
+
+#songs > div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+#canciones {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Para asegurar que la superposición no se desborde */
+}
+
+#canciones::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1); /* Superposición negra con opacidad del 50% */
+    align-items: center;
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.2s ease;
+    pointer-events: none; /* Permite que el hover se aplique a las imágenes debajo de la superposición */
+}
+
+#canciones.hovered::before {
+    opacity: 1; 
+}
+
+#Cancion1 > img, #Cancion2 > img {
+    border: 4px solid darkgoldenrod;
+    border-radius: 12px;
+    margin: 0 1em;
+    width: 240px;
+    height: 240px;
+    transition: transform 0.2s ease;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+}
+
+#Cancion1 > img:hover, #Cancion2 > img:hover {
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    animation: spin 6s linear infinite;
+    justify-content: center;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#albums{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#albumes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#album1, #album2{
+    text-align: center;
+    justify-content: center;
+    color: white;
+}
+
+#album1 > ul, #album2 > ul{
+    list-style: none;
+    padding: 0;
+    font-style: italic;
+}
+
+#album1 > img, #album2 > img{
+    width: 240px;
+    height: 240px;
+    border: 4px solid darkgoldenrod;
+    border-radius: 12px;
+    margin: 0 1em;
+}
+
+#gallery{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#contactChannels > a > img{
+    margin: 5px;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border: 3.5px solid goldenrod;
+    border-radius: 25px;
+}
+
+#contactChannels{
+    display: flex;
+    flex-direction: row;
+}
+
+footer {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: black; /* Color de fondo opcional */
+}
+
+footer p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    color: darkgoldenrod;
+    text-align: center;
+    margin: 0; /* Elimina el margen para evitar el espaciado no deseado */
+}
+
+footer a {
+    color: darkgoldenrod;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline; /* Opcional: subrayar el enlace al pasar el ratón sobre él */
+}
+
+
+.sliderGallery{
+    border: 5px solid darkgoldenrod;
+    border-radius: 15px;
+    width: 800px;
+    overflow: hidden;
+}
+
+.sliderGallery ul{
+    display: flex;
+    padding: 0;
+    width: 500%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.sliderGallery li{
+    width: 80%;
+    list-style: none;
+    position: relative;
+}
+
+.sliderGallery img{
+    margin: 0;
+    width: 100%;
+}
+
+@keyframes slide{
+    0% {margin-left: 0;}
+    15% {margin-left: 0;}
+
+    20% {margin-left: -100%;}
+    35% {margin-left: -100%;}
+
+    40% {margin-left: -200%;}
+    55% {margin-left: -200%;}
+
+    60% {margin-left: -300%;}
+    75% {margin-left: -300%;}
+
+    80% {margin-left: -400%;}
+    100% {margin-left: -400%;}    
+}
+
+@media (max-width: 480px) {
+    html {
+        scroll-behavior: smooth;
+        width: 100dvw;
+        overflow:scroll;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+    }
+    
+    sections{
+        margin: 0;
+        padding: 0;
+        height: 100dvh;
+    }
+
+    .navBar{
+        margin: 0;
+        padding: 0;
+        position: static;
+        width: 100dvw;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 10px;
+        color: white;
+        z-index: 1000;
+    }
+
+    .navBar > a{
+        padding: 0.7em;
+    }
+
+    .navBar a.active{
+        color: darkgoldenrod;
+    }
+
+    nav a {
+        padding: 1em;
+        border-top: 1px solid darkgoldenrod;
+    }
+
+    #home > h1{
+        font-size: 55px;
+    }
+
+    #aboutMe{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image: url(./fotos/cantando2.jpeg);
+        background-position: center;
+    }
+
+    #aboutMe > div:nth-child(1){
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        width: 100dvw;
+        height: 100vh;
+        background-color: black;
+        font-family: "Josefin Sans", sans-serif;
+    }
+
+    
+    #aboutMe > div:nth-child(2){
+        display: none;
+    }
+
+    #aboutMe > div:nth-child(1) > p{
+        padding: 1em;
+        margin: 1em;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
+    }
+
+    .sliderGallery{
+        margin-left: 0.5em;
+        border-radius: 15px;
+        width: 90dvw;
+        overflow: hidden;
+    }
+
+    #canciones{
+        display: flex;
+        flex-direction: column;
+        width: 100dvw;
+    }
+
+    #Cancion1 > img, #Cancion2 > img{
+        padding: 0;
+    }
+
+    footer{
+        width: 70%;
+    }
+
+    
+}
