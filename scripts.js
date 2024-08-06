@@ -1,17 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const canciones = document.getElementById('canciones');
-    const imagenes = document.querySelectorAll('#Cancion1 > img, #Cancion2 > img');
-
-    imagenes.forEach(img => {
-        img.addEventListener('mouseover', () => {
-            canciones.classList.add('hovered');
-        });
-        img.addEventListener('mouseout', () => {
-            canciones.classList.remove('hovered');
-        });
-    });
-});
-
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a');
@@ -78,4 +64,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-

@@ -12,7 +12,6 @@ html {
 
 body {
     background-color: black;
-    /* background: linear-gradient(to bottom, blue, black); */
 }
 
 nav {
@@ -39,8 +38,16 @@ nav > a:hover{
     color: darkgoldenrod;
 }
 
-section {
-    height: calc(100vh);
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    width: 100dvw;
     scroll-snap-align: start;
 }
 
@@ -59,36 +66,14 @@ h3{
 }
 
 p{
-    margin-left: 5em;
-    margin-right: 5em;
+    margin: 0 5em;
     text-align: justify;
     font-size: 20px;
 }
 
-#home {
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    width: 100%;
-    height: 100vh;
-}
-
-#aboutMe {
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    width: 100%;
-}
-
 #home > h1 {
     font-family: Qualy;
-    font-size: 100px;
+    font-size: calc(0.1 * 70vw);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -96,30 +81,7 @@ p{
     overflow: hidden;    
 }
 
-.shiny-text::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, darkgoldenrod, transparent);
-    animation: shine 3s infinite;
-  }
-  
-  @keyframes shine {
-    0% {
-      left: -100%;
-    }
-    50% {
-      left: 100%;
-    }
-    100% {
-      left: 100%;
-    }
-  }
-#aboutMe, #songs, #albums{
-    display: flex;
+#aboutMe{
     flex-direction: row;
 }
 
@@ -128,10 +90,7 @@ p{
     flex-direction: column;
     justify-content: center;
     width: 65vw;
-    height: 100vh;
-    background-color: black;
     font-family: "Josefin Sans", sans-serif;
-    height: 100%;
 }
 
 #aboutMe > div:nth-child(2) {
@@ -140,7 +99,6 @@ p{
     background-size: cover;
     background-position: right;
     width: 50vw;
-    height: 100vh;
     mask-image: linear-gradient(to left, black 80%, transparent); /* Standard */
     height: 100%;
 }
@@ -150,8 +108,6 @@ p{
     flex-direction: column;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
-    background-color: black;
     font-family: "Josefin Sans", sans-serif;
 }
 
@@ -165,27 +121,9 @@ p{
     overflow: hidden; /* Para asegurar que la superposición no se desborde */
 }
 
-#canciones::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 1); /* Superposición negra con opacidad del 50% */
-    align-items: center;
-    opacity: 0; /* Inicialmente invisible */
-    transition: opacity 0.2s ease;
-    pointer-events: none; /* Permite que el hover se aplique a las imágenes debajo de la superposición */
-}
-
-#canciones.hovered::before {
-    opacity: 1; 
-}
-
 #Cancion1 > img, #Cancion2 > img {
     border: 4px solid darkgoldenrod;
-    border-radius: 12px;
+    border-radius: 50%;
     margin: 0 1em;
     width: 240px;
     height: 240px;
@@ -208,18 +146,9 @@ p{
     to { transform: rotate(360deg); }
 }
 
-#albums{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-#albumes{
+#allAlbums{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
 #album1, #album2{
@@ -240,22 +169,6 @@ p{
     border: 4px solid darkgoldenrod;
     border-radius: 12px;
     margin: 0 1em;
-}
-
-#gallery{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-#contact{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
 }
 
 #contactChannels > a > img{
@@ -280,7 +193,6 @@ footer {
     bottom: 0;
     width: 100%;
     padding: 10px 0;
-    background-color: black; /* Color de fondo opcional */
 }
 
 footer p {
@@ -300,11 +212,10 @@ footer a:hover {
     text-decoration: underline; /* Opcional: subrayar el enlace al pasar el ratón sobre él */
 }
 
-
 .sliderGallery{
     border: 5px solid darkgoldenrod;
     border-radius: 15px;
-    width: 800px;
+    width: 55dvw;
     overflow: hidden;
 }
 
@@ -345,7 +256,6 @@ footer a:hover {
 
 @media (max-width: 480px) {
     html {
-        scroll-behavior: smooth;
         width: 100dvw;
         overflow:scroll;
     }
@@ -357,16 +267,9 @@ footer a:hover {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: black;
-    }
-    
-    sections{
-        margin: 0;
-        padding: 0;
-        height: 100dvh;
     }
 
-    .navBar{
+    nav{
         margin: 0;
         padding: 0;
         position: static;
@@ -378,11 +281,11 @@ footer a:hover {
         z-index: 1000;
     }
 
-    .navBar > a{
+    nav > a{
         padding: 0.7em;
     }
 
-    .navBar a.active{
+    nav a.active{
         color: darkgoldenrod;
     }
 
@@ -392,15 +295,7 @@ footer a:hover {
     }
 
     #home > h1{
-        font-size: 55px;
-    }
-
-    #aboutMe{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-image: url(./fotos/cantando2.jpeg);
-        background-position: center;
+        font-size: calc(0.1 * 100vw);
     }
 
     #aboutMe > div:nth-child(1){
@@ -408,12 +303,9 @@ footer a:hover {
         display: flex;
         justify-content: center;
         width: 100dvw;
-        height: 100vh;
-        background-color: black;
         font-family: "Josefin Sans", sans-serif;
     }
 
-    
     #aboutMe > div:nth-child(2){
         display: none;
     }
@@ -422,11 +314,10 @@ footer a:hover {
         padding: 1em;
         margin: 1em;
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-
     }
 
     .sliderGallery{
-        margin-left: 0.5em;
+        margin: 0 0.5em;
         border-radius: 15px;
         width: 90dvw;
         overflow: hidden;
@@ -442,9 +333,36 @@ footer a:hover {
         padding: 0;
     }
 
-    footer{
-        width: 70%;
+    #allAlbums{
+        flex-direction: column;
     }
 
+    footer{
+        width: 70%;
+    }   
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    html{
+        overflow:scroll;
+    }
+
+    section{
+        padding: 1em;
+        /* transform: scale(95%); */
+    }
+
+    #album1 > img, #album2 > img, #Cancion1 > img, #Cancion2 > img{
+        transform: scale(70%);
+
+    }
+
+    #songs h2, #songs h3, #albums h2, #albums h3{
+        margin: 0;
+    }
+
+    p{
+        margin: 0 10%;
+    }
     
 }
