@@ -8,10 +8,12 @@
 html {
     scroll-behavior: smooth;
     overflow: hidden;
-    width: 100dvw;
+    /* width: 100dvw; */
+    min-width: 320px;
 }
 
 body {
+    min-width: 320px;
     background-color: black;
 }
 
@@ -30,6 +32,7 @@ nav{
 nav ul{
     float: right;
     margin-right: 1em;
+    padding: 0;
 }
 
 nav ul li{
@@ -290,10 +293,9 @@ footer a:hover {
     100% {margin-left: -400%;}    
 }
 
-@media (max-width: 779px) {
+@media (max-width: 600px) {
     html {
-        width: 100dvw;
-        overflow: scroll;
+        overflow:auto;
     }
 
     body {
@@ -347,8 +349,8 @@ footer a:hover {
     }
 
     h2{
-        position: sticky;
-        top: 0.5em;
+        /* position: sticky; */
+        /* top: 0.5em; */
     }
 
     li a:hover, li.active{
@@ -430,8 +432,82 @@ footer a:hover {
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
-    #Cancion1 > img, #Cancion2 > img, #album1 img, #album2 img{
+    html{
+        overflow:scroll;
+        width: 100dvw;
+    }
+
+    section{
+        padding: 1em;
+        /* transform: scale(95%); */
+    }
+
+    .checkbtn{
+        display: block;
+        margin-right: 0.5em;
+    }
+
+    nav{
+        background: none;
+        justify-content:flex-end;
+    }
+
+    nav ul{
         margin: 0;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100dvh;
+        background-color: black;
+        list-style: none;
+        left: -200%;
+        text-align: center;
+        transition: all .5s;
+        z-index: 100;
     }
+
+    nav ul li{
+        display: block;
+        padding: 1em 0;
+        line-height: 30px;
+        border-bottom: 2px solid darkgoldenrod;
+    }
+
+    nav ul li a{
+        display: flex;
+        margin: 0 2.5em;
+        justify-content: center;
+        padding: 0;
+        font-size: 20px;
+    }
+
+    h2{
+        /* position: sticky; */
+        /* top: 0.5em; */
+    }
+
+    li a:hover, li.active{
+        background: none;
+        color: darkgoldenrod;
+    }
+
+    nav label{
+        cursor: pointer;
+    }
+
+    #album1 > img, #album2 > img, #Cancion1 > img, #Cancion2 > img{
+        transform: scale(70%);
+
+    }
+
+    #songs h2, #songs h3, #albums h2, #albums h3{
+        margin: 0;
+    }
+
+    p{
+        margin: 0 10%;
+    }
+    
 }
