@@ -7,7 +7,8 @@
 
 html {
     scroll-behavior: smooth;
-    overflow: scroll;
+    overflow: hidden;
+    width: 100dvw;
 }
 
 body {
@@ -292,7 +293,7 @@ footer a:hover {
 @media (max-width: 779px) {
     html {
         width: 100dvw;
-        overflow: hidden;
+        overflow: scroll;
     }
 
     body {
