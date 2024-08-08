@@ -72,14 +72,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     checkbtn.addEventListener("click", function() {
         if (menuToggle.checked) {
-            navMenu.style.left = "-200%";
+            navMenu.style.right = "-200%";
         } else {
-            navMenu.style.left = "0";
+            navMenu.style.right = "0";
         }
     });
 
     navMenu.addEventListener("click", function() {
-        navMenu.style.left = "-200%";
+        navMenu.style.right = "-200%";
         menuToggle.checked = false;
     });
 });
