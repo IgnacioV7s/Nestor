@@ -7,7 +7,7 @@
 
 html {
     scroll-behavior: smooth;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 body {
