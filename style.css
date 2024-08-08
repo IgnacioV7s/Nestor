@@ -8,12 +8,12 @@
 html {
     scroll-behavior: smooth;
     overflow: hidden;
-    /* width: 100dvw; */
     min-width: 320px;
     width: 100dvw;
 }
 
 body {
+    width: 100dvw;
     min-width: 320px;
     background-color: black;
 }
@@ -432,15 +432,14 @@ footer a:hover {
     }  
 }
 
-@media (min-width: 600px) and (max-width: 900px) {
+@media (min-width: 580px) and (max-width: 900px) {
     html{
         overflow:scroll;
         width: 100dvw;
     }
 
     section{
-        padding: 1em;
-        /* transform: scale(95%); */
+        padding: 1em 0;
     }
 
     .checkbtn{
