@@ -294,7 +294,7 @@ footer a:hover {
     100% {margin-left: -400%;}    
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     html {
         overflow:auto;
     }
@@ -347,11 +347,6 @@ footer a:hover {
         justify-content: center;
         padding: 0;
         font-size: 20px;
-    }
-
-    h2{
-        /* position: sticky; */
-        /* top: 0.5em; */
     }
 
     li a:hover, li.active{
@@ -483,11 +478,6 @@ footer a:hover {
         font-size: 20px;
     }
 
-    h2{
-        /* position: sticky; */
-        /* top: 0.5em; */
-    }
-
     li a:hover, li.active{
         background: none;
         color: darkgoldenrod;
@@ -497,13 +487,45 @@ footer a:hover {
         cursor: pointer;
     }
 
+    #aboutMe {
+        display: flex;
+        flex-direction: column;
+        display: flex;
+        flex-direction: column;
+        font-family: "Josefin Sans", sans-serif;
+    }
+
+    #aboutMe h2{
+        z-index: 100;
+        filter: brightness(1.1);
+    }
+
+    #aboutMe > div:nth-child(1){
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url('./fotos/cantando2.jpeg');
+        background-size: cover;
+        background-repeat:no-repeat;
+        background-position: center;
+        height: 100dvh;
+        width: 100dvw;
+    }
+
+    #aboutMe > div:nth-child(2){
+        display: none;
+    }
+
+    #aboutMe > div:nth-child(1) > p{
+        padding: 1em;
+        margin: 1em;
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    }
+
     #album1 > img, #album2 > img, #Cancion1 > img, #Cancion2 > img{
         transform: scale(70%);
 
     }
 
     #songs h2, #songs h3, #albums h2, #albums h3{
-        margin: 0;
+        margin: 40px 0;
     }
 
     p{
