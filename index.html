@@ -14,12 +14,18 @@
 
 <body>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#aboutMe">Sobre mí</a>
-        <a href="#songs">Sencillos</a>
-        <a href="#albums">Álbumes</a>
-        <a href="#gallery">Galería</a>
-        <a href="#contact">Contacto</a>
+        <label for="menu-toggle" class="checkbtn">
+            <img src="./fotos/blackMenu.png" alt="Menu Icon" style="width: 30px; height: 30px;">
+        </label>
+        <input type="checkbox" id="menu-toggle">
+        <ul id="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#aboutMe">Sobre mí</a></li>
+            <li><a href="#songs">Sencillos</a></li>
+            <li><a href="#albums">Álbumes</a></li>
+            <li><a href="#gallery">Galería</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
     </nav>
     <section id="home">
         <h1>
@@ -46,9 +52,8 @@
         <div>
             <!-- Fotografía -->
         </div>
-
+        <h2>Singles</h2>
         <div>
-            <h2>Singles</h2>
             <div id="canciones">
                 <div id="Cancion1">
                     <img src="./fotos/EnamoradoDeTi.jpg" alt="Enamorado de Ti">
@@ -68,11 +73,15 @@
         <h2>Álbumes</h2>
         <div id="allAlbums">
         <div id="album1">
-            <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d2/60/cf/d260cfa4-c059-9be4-9c2c-8ae514ba85f1/artwork.jpg/316x316bb.webp" alt="">
+            <a href="https://www.youtube.com/watch?v=KVKgt1iR2SE&list=OLAK5uy_np9qCmvlTEYPKnzazdgEMqGcghyIov57U">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d2/60/cf/d260cfa4-c059-9be4-9c2c-8ae514ba85f1/artwork.jpg/316x316bb.webp" alt="">
+            </a>
             <h3>7 Love Songs</h3>
         </div>
         <div id="album2">
-            <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/59/2e/43/592e43c3-ec29-b7a1-2bd4-80bbf27ef5e1/artwork.jpg/316x316bb.webp" alt="">
+            <a href="https://www.youtube.com/watch?v=NBv7TPwlRZ8&list=OLAK5uy_nbpZkqBaShFXyBjNJuCDfL0XiqC8Rmkoo">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/59/2e/43/592e43c3-ec29-b7a1-2bd4-80bbf27ef5e1/artwork.jpg/316x316bb.webp" alt="">
+            </a>
             <h3>Nestor Valenzuela - EP</h3>
         </div>
     </div>

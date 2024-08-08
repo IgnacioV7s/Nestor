@@ -64,3 +64,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+    const checkbtn = document.querySelector(".checkbtn");
+
+    checkbtn.addEventListener("click", function() {
+        if (menuToggle.checked) {
+            navMenu.style.left = "-200%";
+        } else {
+            navMenu.style.left = "0";
+        }
+    });
+
+    navMenu.addEventListener("click", function() {
+        navMenu.style.left = "-200%";
+        menuToggle.checked = false;
+    });
+});
