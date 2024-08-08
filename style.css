@@ -10,6 +10,7 @@ html {
     overflow: hidden;
     /* width: 100dvw; */
     min-width: 320px;
+    width: 100dvw;
 }
 
 body {
