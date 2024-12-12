@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('nav a');
     let currentSectionIndex = 0;
     let scrollCounter = 0; // Contador de scroll
-    const SCROLL_THRESHOLD = 5; // Umbral de scrolls para desplazarse
+    const SCROLL_THRESHOLD = 15; // Umbral de scrolls para desplazarse
 
     function scrollToSection(index) {
         if (index >= 0 && index < sections.length) {
