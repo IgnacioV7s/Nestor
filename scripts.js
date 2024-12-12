@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a');
     let currentSectionIndex = 0;
+    let scrollCounter = 0; // Contador de scroll
+    const SCROLL_THRESHOLD = 5; // Umbral de scrolls para desplazarse
 
     function scrollToSection(index) {
         if (index >= 0 && index < sections.length) {
@@ -11,16 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     window.addEventListener('wheel', (event) => {
-        if (event.deltaY > 0) {
-            // Scroll down
-            if (currentSectionIndex < sections.length - 1) {
+        scrollCounter += Math.sign(event.deltaY); // Incrementa o decrementa el contador según la dirección del scroll
+
+        if (Math.abs(scrollCounter) >= SCROLL_THRESHOLD) {
+            if (scrollCounter > 0 && currentSectionIndex < sections.length - 1) {
                 scrollToSection(currentSectionIndex + 1);
-            }
-        } else {
-            // Scroll up
-            if (currentSectionIndex > 0) {
+            } else if (scrollCounter < 0 && currentSectionIndex > 0) {
                 scrollToSection(currentSectionIndex - 1);
             }
+            scrollCounter = 0; // Reinicia el contador de scroll
         }
     });
 
@@ -31,8 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-
 
 document.addEventListener('DOMContentLoaded', function () {
     // Obtener los elementos de imagen y audio
