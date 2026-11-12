@@ -1,540 +1,712 @@
+/* ==========================================================================
+   Néstor Valenzuela – estilos
+   Mobile-first: los estilos base son para celular; los @media agregan escritorio.
+   ========================================================================== */
+
+/* ---------- Fuente ---------- */
 @font-face {
     font-family: 'Qualy';
-    src: url(./Qualy\ Bold.ttf);
-    font-weight: bold;
-    font-style: bold;
+    src: url('../assets/fonts/Qualy-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ---------- Variables ---------- */
+:root {
+    --bg: #000;
+    --text: #f2f2f2;
+    --muted: #c4c4c4;
+    --gold: #b8860b;
+    /* darkgoldenrod: bordes y detalles */
+    --gold-bright: #daa520;
+    /* goldenrod: hover y texto pequeño */
+    --nav-h: 64px;
+    --radius: 14px;
+    --font-display: 'Qualy', Georgia, 'Times New Roman', serif;
+    --font-body: 'Josefin Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
-    overflow: hidden;
-    min-width: 320px;
-    width: 100dvw;
+    -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Snap suave entre secciones, solo en pantallas grandes y con scroll nativo */
+@media (min-width: 900px) and (min-height: 600px) {
+    html {
+        scroll-snap-type: y proximity;
+    }
 }
 
 body {
-    width: 100dvw;
-    min-width: 320px;
-    background-color: black;
-}
-
-nav{
-    position: fixed;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    z-index: 1000;
-    top: 0;
-}
-
-nav ul{
-    float: right;
-    margin-right: 1em;
-    padding: 0;
-}
-
-nav ul li{
-    font-family: Qualy;
-    display: inline-block;
-    line-height: 30px;
-    margin: 0 5px;
-}
-
-nav ul li a{
-    padding: 1em;
-    font-family: Qualy;
-    font-weight: 200;
-    font-size: large;
-    color: white;
-    text-decoration: none;
-}
-
-li a.active, li a:hover{
-    color: darkgoldenrod;
-    transition: .3s;
-}
-
-body > nav > label > img{
-    padding: 0;
-}
-
-.checkbtn{
-    font-size: 30px;
-    color: white;
-    float: right;
-    margin: 15px 15px 15px 15px;
-    cursor: pointer;
-    display: none;
-}
-
-#menu-toggle {
-    display: none;
-}
-
-#check{
-    display: none;
-}
-
-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
     margin: 0;
-    padding: 0;
-    height: 100dvh;
-    width: 100dvw;
-    scroll-snap-align: start;
+    min-width: 320px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.65;
 }
 
-h2{
-    padding: 0 .3em;
-    color: darkgoldenrod;
-    margin: 40px 0;
-    font-family: Qualy;
-    font-size: 30px;
-    text-align: center;
-}
-
-h3{
-    color: white;
-    font-family: Qualy;
-    font-size: 20px;
-}
-
-p{
-    margin: 0 5em;
-    text-align: justify;
-    font-size: 20px;
-}
-
-#home > h1 {
-    font-family: Qualy;
-    font-size: calc(0.1 * 70vw);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    overflow: hidden;    
-}
-
-#aboutMe{
-    flex-direction: row;
-}
-
-#aboutMe > div:nth-child(1){
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 65vw;
-    font-family: "Josefin Sans", sans-serif;
-}
-
-#aboutMe > div:nth-child(2) {
-    background-image: url('./fotos/cantando.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right;
-    width: 50vw;
-    mask-image: linear-gradient(to left, black 80%, transparent); /* Standard */
-    height: 100%;
-}
-
-#songs > div:nth-child(2){
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100vw;
-    font-family: "Josefin Sans", sans-serif;
-}
-
-#canciones {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    overflow: hidden; /* Para asegurar que la superposición no se desborde */
-}
-
-#Cancion1 > img, #Cancion2 > img {
-    border: 4px solid darkgoldenrod;
-    border-radius: 50%;
-    margin: 0 1em;
-    width: 240px;
-    height: 240px;
-    transition: transform 0.2s ease;
-    font-size: 24px;
-    font-weight: bold;
-    position: relative;
-}
-
-#Cancion1 > img:hover, #Cancion2 > img:hover {
-    border-radius: 50%;
-    display: flex;
-    flex-direction: row;
-    animation: spin 6s linear infinite;
-    justify-content: center;
-}
-
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-#allAlbums{
-    display: flex;
-    flex-direction: row;
-}
-
-#album1, #album2{
-    text-align: center;
-    justify-content: center;
-    color: white;
-}
-
-#album1 > ul, #album2 > ul{
-    list-style: none;
-    padding: 0;
-    font-style: italic;
-}
-
-#album1 a img, #album2 a img{
-    width: 240px;
-    height: 240px;
-    border: 4px solid darkgoldenrod;
-    border-radius: 12px;
-    margin: 0 1em;
-}
-
-#contactChannels > a > img{
-    margin: 5px;
-    width: 45px;
-    height: 45px;
-    background-color: white;
-    border: 3.5px solid goldenrod;
-    border-radius: 25px;
-}
-
-#contactChannels{
-    display: flex;
-    flex-direction: row;
-}
-
-footer {
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    padding: 10px 0;
-}
-
-footer p {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 15px;
-    color: darkgoldenrod;
-    text-align: center;
-    margin: 0; /* Elimina el margen para evitar el espaciado no deseado */
-}
-
-footer a {
-    color: darkgoldenrod;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline; /* Opcional: subrayar el enlace al pasar el ratón sobre él */
-}
-
-.sliderGallery{
-    border: 5px solid darkgoldenrod;
-    border-radius: 15px;
-    width: 55dvw;
+body.menu-open {
     overflow: hidden;
 }
 
-.sliderGallery ul{
-    display: flex;
-    padding: 0;
-    width: 500%;
-    animation: slide 20s infinite alternate ease-in-out;
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-.sliderGallery li{
-    width: 80%;
-    list-style: none;
-    position: relative;
-}
-
-.sliderGallery img{
+h1,
+h2,
+h3 {
     margin: 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+a {
+    color: inherit;
+}
+
+:focus-visible {
+    outline: 3px solid var(--gold-bright);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -4rem;
+    left: 1rem;
+    z-index: 2000;
+    padding: .6rem 1rem;
+    border-radius: 8px;
+    background: var(--gold-bright);
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+/* ---------- Navegación ---------- */
+.site-nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 1000;
+    height: var(--nav-h);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 .75rem;
+}
+
+/* El fondo va en un pseudo-elemento: así backdrop-filter no afecta al menú fixed de adentro */
+.site-nav::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, .6);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.nav-toggle {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    place-content: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: #fff;
+    transition: transform .3s, opacity .3s;
+}
+
+.site-nav.is-open .nav-toggle span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.site-nav.is-open .nav-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.site-nav.is-open .nav-toggle span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Menú móvil: pantalla completa */
+.nav-menu {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: var(--nav-h) 2rem 2rem;
+    list-style: none;
+    text-align: center;
+    background: #000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
+    transition: opacity .3s, transform .3s, visibility 0s .3s;
+}
+
+.site-nav.is-open .nav-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+}
+
+.nav-menu li {
+    border-bottom: 1px solid var(--gold);
+}
+
+.nav-menu li:last-child {
+    border-bottom: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: 1.1rem 0;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color .3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--gold-bright);
+}
+
+@media (min-width: 800px) {
+    .site-nav {
+        justify-content: center;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        position: static;
+        flex-direction: row;
+        gap: .25rem;
+        padding: 0;
+        background: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition: none;
+    }
+
+    .nav-menu li {
+        border: 0;
+    }
+
+    .nav-link {
+        position: relative;
+        padding: .5rem 1rem;
+        font-size: 1.05rem;
+    }
+
+    .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        bottom: .2rem;
+        height: 2px;
+        background: var(--gold-bright);
+        transform: scaleX(0);
+        transition: transform .3s;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        transform: scaleX(1);
+    }
+}
+
+/* ---------- Secciones ---------- */
+.section {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--nav-h) + 2rem) 1.25rem 3rem;
+    scroll-snap-align: start;
+}
+
+.section-title {
+    margin-bottom: 2rem;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    color: var(--gold);
+    text-align: center;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+    display: inline-block;
+    padding: .7rem 1.6rem;
+    border: 2px solid var(--gold);
+    border-radius: 999px;
+    background: transparent;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-decoration: none;
+    transition: background .25s, color .25s, border-color .25s;
+}
+
+.btn:hover {
+    border-color: var(--gold-bright);
+    background: rgba(218, 165, 32, .15);
+}
+
+.btn--primary {
+    background: var(--gold);
+    color: #000;
+}
+
+.btn--primary:hover {
+    background: var(--gold-bright);
+    border-color: var(--gold-bright);
+}
+
+/* Indicador de enlace externo */
+.btn.ext::after {
+    content: " ↗";
+    font-size: .85em;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    text-align: center;
+}
+
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 60% center;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .45) 45%, #000 100%);
+}
+
+.hero__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: clamp(3.2rem, 14vw, 9rem);
+    letter-spacing: .02em;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, .6);
+}
+
+.hero__tagline {
+    margin: 1.5rem 0 2rem;
+    color: var(--gold-bright);
+    font-size: clamp(.8rem, 2.4vw, 1.1rem);
+    font-weight: 600;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* ---------- Sobre mí ---------- */
+.about__inner {
+    display: grid;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1100px;
+    align-items: center;
+}
+
+.about__text p {
+    max-width: 60ch;
+    color: var(--muted);
+}
+
+.about__text .section-title {
+    text-align: left;
+}
+
+.about__photo {
+    order: -1;
+    margin: 0;
+    overflow: hidden;
+    border: 4px solid var(--gold);
+    border-radius: var(--radius);
+    aspect-ratio: 4 / 3;
+}
+
+.about__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+}
+
+@media (min-width: 900px) {
+    .about__inner {
+        grid-template-columns: 1.1fr .9fr;
+        gap: 4rem;
+    }
+
+    .about__photo {
+        order: 0;
+        aspect-ratio: 4 / 5;
+        max-height: 70vh;
+        max-height: 70svh;
+        justify-self: center;
+    }
+}
+
+/* ---------- Sencillos + reproductor ---------- */
+.tracks {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem 4rem;
+}
+
+.track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: min(280px, 100%);
+    text-align: center;
+}
+
+.track__cover {
+    width: min(240px, 70vw);
+    aspect-ratio: 1;
+    border: 4px solid var(--gold);
+    border-radius: 50%;
+    object-fit: cover;
+    animation: spin 8s linear infinite paused;
+}
+
+.track.is-playing .track__cover {
+    animation-play-state: running;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.track__title {
+    font-size: 1.35rem;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
     width: 100%;
 }
 
-@keyframes slide{
-    0% {margin-left: 0;}
-    15% {margin-left: 0;}
-
-    20% {margin-left: -100%;}
-    35% {margin-left: -100%;}
-
-    40% {margin-left: -200%;}
-    55% {margin-left: -200%;}
-
-    60% {margin-left: -300%;}
-    75% {margin-left: -300%;}
-
-    80% {margin-left: -400%;}
-    100% {margin-left: -400%;}    
+.player__btn {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--gold);
+    color: #000;
+    cursor: pointer;
+    transition: background .25s, transform .15s;
 }
 
-@media (max-width: 700px) {
-    html {
-        overflow:auto;
-    }
-
-    body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .checkbtn{
-        display: block;
-        margin-right: 0.5em;
-    }
-
-    nav{
-        background: none;
-        justify-content:flex-end;
-    }
-
-    nav ul{
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        list-style: none;
-        right: -200%;
-        text-align: center;
-        transition: all .5s;
-        z-index: 100;
-    }
-
-    nav ul li{
-        display: block;
-        padding: 1em 0;
-        line-height: 30px;
-        border-bottom: 2px solid darkgoldenrod;
-    }
-
-    nav ul li a{
-        display: flex;
-        margin: 0 2.5em;
-        justify-content: center;
-        padding: 0;
-        font-size: 20px;
-    }
-
-    li a:hover, li.active{
-        background: none;
-        color: darkgoldenrod;
-    }
-
-    nav label{
-        cursor: pointer;
-    }
-
-    #home > h1{
-        font-size: calc(0.2 * 70vw);
-    }
-
-    #aboutMe {
-        display: flex;
-        flex-direction: column;
-        display: flex;
-        flex-direction: column;
-        font-family: "Josefin Sans", sans-serif;
-    }
-
-    #aboutMe h2{
-        z-index: 100;
-        filter: brightness(1.1);
-    }
-
-    #aboutMe > div:nth-child(1){
-        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url('./fotos/cantando2.jpeg');
-        background-size: cover;
-        background-repeat:no-repeat;
-        background-position: center;
-        height: 100dvh;
-        width: 100dvw;
-    }
-
-    #aboutMe > div:nth-child(2){
-        display: none;
-    }
-
-    #aboutMe > div:nth-child(1) > p{
-        padding: 1em;
-        margin: 1em;
-        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-    }
-
-    .sliderGallery{
-        margin: 0 0.5em;
-        border-radius: 15px;
-        width: 90dvw;
-        overflow: hidden;
-    }
-
-    #canciones{
-        display: flex;
-        flex-direction: column;
-        width: 100dvw;
-    }
-
-    #Cancion1 > img, #Cancion2 > img, #album1 img, #album2 img{
-        transform: scale(80%);
-        margin: 0;
-        padding: 0;
-    }
-
-    #canciones h3, #albums h3{
-        margin: -10px 0 0 0;
-    }
-
-    #Cancion1 > img:hover, #Cancion2 > img:hover {
-        transform: scale(80%);
-    }
-
-    #allAlbums{
-        flex-direction: column;
-    }
-
-    footer p{
-        font-size: 10px;
-        text-transform: uppercase;
-    }  
+.player__btn:hover {
+    background: var(--gold-bright);
 }
 
-@media (min-width: 580px) and (max-width: 930px) {
-    html{
-        overflow:scroll;
-        width: 100dvw;
-    }
+.player__btn:active {
+    transform: scale(.94);
+}
 
-    section{
-        padding: 1em 0;
-    }
+.player__btn svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
 
-    .checkbtn{
-        display: block;
-        margin-right: 0.5em;
-    }
+.player__btn .icon-pause,
+.track.is-playing .player__btn .icon-play {
+    display: none;
+}
 
-    nav{
-        background: none;
-        justify-content:flex-end;
-    }
+.track.is-playing .player__btn .icon-pause {
+    display: block;
+}
 
-    nav ul{
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        width: 100%;
-        height: 100dvh;
-        background-color: black;
-        list-style: none;
-        left: -200%;
-        text-align: center;
-        transition: all .5s;
-        z-index: 100;
-    }
+.player__body {
+    flex: 1;
+    min-width: 0;
+}
 
-    nav ul li{
-        display: block;
-        padding: 1em 0;
-        line-height: 30px;
-        border-bottom: 2px solid darkgoldenrod;
-    }
+.player__seek {
+    display: block;
+    width: 100%;
+    margin: 0;
+    accent-color: var(--gold-bright);
+    cursor: pointer;
+}
 
-    nav ul li a{
-        display: flex;
-        margin: 0 2.5em;
-        justify-content: center;
-        padding: 0;
-        font-size: 20px;
-    }
+.player__seek:disabled {
+    cursor: default;
+    opacity: .5;
+}
 
-    li a:hover, li.active{
-        background: none;
-        color: darkgoldenrod;
-    }
+.player__time {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: .85rem;
+    font-variant-numeric: tabular-nums;
+}
 
-    nav label{
-        cursor: pointer;
-    }
+/* ---------- Álbumes ---------- */
+.albums {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
 
-    #aboutMe {
-        display: flex;
-        flex-direction: column;
-        display: flex;
-        flex-direction: column;
-        font-family: "Josefin Sans", sans-serif;
-    }
+.album {
+    width: min(260px, 100%);
+    text-align: center;
+}
 
-    #aboutMe h2{
-        z-index: 100;
-        filter: brightness(1.1);
-    }
+.album__link {
+    display: block;
+    text-decoration: none;
+}
 
-    #aboutMe > div:nth-child(1){
-        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url('./fotos/cantando2.jpeg');
-        background-size: cover;
-        background-repeat:no-repeat;
-        background-position: center;
-        height: 100dvh;
-        width: 100dvw;
-    }
+.album__cover {
+    width: 100%;
+    aspect-ratio: 1;
+    border: 4px solid var(--gold);
+    border-radius: 12px;
+    background: #1a1a1a;
+    object-fit: cover;
+    transition: transform .25s, border-color .25s;
+}
 
-    #aboutMe > div:nth-child(2){
-        display: none;
-    }
+.album__link:hover .album__cover,
+.album__link:focus-visible .album__cover {
+    border-color: var(--gold-bright);
+    transform: translateY(-4px);
+}
 
-    #aboutMe > div:nth-child(1) > p{
-        padding: 1em;
-        margin: 1em;
-        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-    }
+.album__title {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+}
 
-    #album1 > img, #album2 > img, #Cancion1 > img, #Cancion2 > img{
-        transform: scale(70%);
+.album__cta {
+    display: block;
+    margin-top: .25rem;
+    color: var(--gold-bright);
+    font-size: .95rem;
+}
 
-    }
+.album__link.ext .album__cta::after {
+    content: " ↗";
+}
 
-    #songs h2, #songs h3, #albums h2, #albums h3{
-        margin: 40px 0;
-    }
+/* ---------- Galería ---------- */
+.gallery {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+}
 
-    p{
-        margin: 0 10%;
+.gallery__track {
+    display: flex;
+    gap: 1rem;
+    padding: .5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) transparent;
+}
+
+.gallery__item {
+    flex: none;
+    margin: 0;
+    scroll-snap-align: center;
+}
+
+.gallery__item img {
+    width: auto;
+    max-width: none;
+    height: min(60vh, 520px);
+    height: min(60svh, 520px);
+    border: 3px solid var(--gold);
+    border-radius: 12px;
+}
+
+.gallery__nav {
+    position: absolute;
+    top: 50%;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .75);
+    color: #fff;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background .25s, opacity .25s;
+}
+
+.gallery__nav:hover:not(:disabled) {
+    background: var(--gold);
+    color: #000;
+}
+
+.gallery__nav:disabled {
+    opacity: .25;
+    cursor: default;
+}
+
+.gallery__nav--prev {
+    left: .75rem;
+}
+
+.gallery__nav--next {
+    right: .75rem;
+}
+
+.gallery__nav svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ---------- Contacto ---------- */
+.contact__lead {
+    max-width: 40ch;
+    margin-bottom: 2rem;
+    color: var(--muted);
+    text-align: center;
+}
+
+.contact__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 640px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+    color: var(--gold-bright);
+    font-size: .9rem;
+}
+
+.site-footer a {
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Accesibilidad: menos movimiento ---------- */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition-duration: .01ms !important;
     }
-    
 }
