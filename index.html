@@ -1,140 +1,266 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nestor Valenzuela</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Néstor Valenzuela | Músico y compositor</title>
+    <meta name="description"
+        content="Sitio oficial de Néstor Valenzuela, músico multiinstrumentista y compositor chileno. Hard rock, pop rock melódico y acústico. Escucha sus sencillos y álbumes.">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="dark">
+
+    <!-- Vista previa al compartir (WhatsApp, Instagram, Facebook, X, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:title" content="Néstor Valenzuela | Músico y compositor">
+    <meta property="og:description"
+        content="Hard rock, pop rock melódico y acústico. Escucha los sencillos y álbumes de Néstor Valenzuela.">
+    <meta property="og:url" content="https://ignaciov7s.github.io/Nestor/">
+    <meta property="og:image" content="https://ignaciov7s.github.io/Nestor/assets/img/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Néstor Valenzuela tocando guitarra en el escenario">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Georgia,serif' font-weight='700' text-anchor='middle' fill='%23daa520'%3ENV%3C/text%3E%3C/svg%3E">
+
+    <link rel="preload" href="assets/fonts/Qualy-Bold.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300..700&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Néstor Valenzuela",
+        "url": "https://ignaciov7s.github.io/Nestor/",
+        "genre": ["Hard rock", "Pop rock", "Acústico"],
+        "sameAs": [
+            "https://open.spotify.com/intl-es/artist/31p67F1FDZA9jvwamGYaHq",
+            "https://music.apple.com/us/artist/n%C3%A9stor-valenzuela/1540445829",
+            "https://tidal.com/browse/artist/22196729",
+            "https://www.youtube.com/@NestorValenzuelaMusic",
+            "https://www.linkedin.com/in/n%C3%A9stor-valenzuela-verdugo-a54598103/"
+        ]
+    }
+    </script>
 </head>
 
 <body>
-    <nav>
-        <label for="menu-toggle" class="checkbtn">
-            <img src="./fotos/blackMenu.png" alt="Menu Icon" style="width: 30px; height: 30px;">
-        </label>
-        <input type="checkbox" id="menu-toggle">
-        <ul id="nav-menu">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#aboutMe" class="nav-link">Sobre mí</a></li>
-            <li><a href="#songs" class="nav-link">Sencillos</a></li>
-            <li><a href="#albums" class="nav-link">Álbumes</a></li>
-            <li><a href="#gallery" class="nav-link">Galería</a></li>
-            <li><a href="#contact" class="nav-link">Contacto</a></li>
-        </ul>
-    </nav>
-    <section id="home">
-        <h1>
-            <span>Néstor</span>
-            <span>Valenzuela</span>
-        </h1>
-    </section>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
 
-    <section id="aboutMe">
-        <div>
-            <h2>Biografía y estilo musical</h2>
-            <p>Néstor Valenzuela es un artista chileno destacado por su versatilidad y talento musical, músico
-                multiinstrumentista y compositor, y su capacidad para combinar diversos géneros le permite crear
-                experiencias únicas para una amplia audiencia. Su repertorio incluye Hard Rock, Pop Rock melódico e
-                interpretaciones acústicas íntimas, ofreciendo algo para todos los gustos.</p>
-        </div>
-        <div>
-            <!-- Fotografía -->
-        </div>
-        <!-- <h1>SOBRE MI</h1> -->
-    </section>
-
-    <section id="songs">
-        <div>
-            <!-- Fotografía -->
-        </div>
-        <h2>Singles</h2>
-        <div>
-            <div id="canciones">
-                <div id="Cancion1">
-                    <img src="./fotos/EnamoradoDeTi.jpg" alt="Enamorado de Ti">
-                    <h3>Enamorado de ti</h3>
-                    <audio id="audio1" src="canciones/Enamorado de ti.mp3"></audio>
-                </div>
-                <div id="Cancion2">
-                    <img src="./fotos/BonnieAndClyde.jpg" alt="Bonnie and Clyde">
-                    <h3>Bonnie & Clyde</h3>
-                    <audio id="audio2" src="canciones/Bonnie Clyde.mp3"></audio>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="albums">
-        <h2>Álbumes</h2>
-        <div id="allAlbums">
-            <div id="album1">
-                <a href="https://www.youtube.com/watch?v=KVKgt1iR2SE&list=OLAK5uy_np9qCmvlTEYPKnzazdgEMqGcghyIov57U">
-                    <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d2/60/cf/d260cfa4-c059-9be4-9c2c-8ae514ba85f1/artwork.jpg/316x316bb.webp"
-                        alt="">
-                </a>
-                <h3>7 Love Songs</h3>
-            </div>
-            <div id="album2">
-                <a href="https://www.youtube.com/watch?v=NBv7TPwlRZ8&list=OLAK5uy_nbpZkqBaShFXyBjNJuCDfL0XiqC8Rmkoo">
-                    <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/59/2e/43/592e43c3-ec29-b7a1-2bd4-80bbf27ef5e1/artwork.jpg/316x316bb.webp"
-                        alt="">
-                </a>
-                <h3>Nestor Valenzuela - EP</h3>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery">
-        <h2>Galería</h2>
-        <div class="sliderGallery">
-            <ul>
-                <li><img src="./fotos/foto3.png" alt=""></li>
-                <li><img src="./fotos/foto1.png" alt=""></li>
-                <li><img src="./fotos/foto2.png" alt=""></li>
-                <li><img src="./fotos/foto5.png" alt=""></li>
-                <li><img src="./fotos/foto4.png" alt=""></li>
+    <header class="site-nav">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu"
+            aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+        <nav aria-label="Principal">
+            <ul class="nav-menu" id="nav-menu">
+                <li><a class="nav-link" href="#home">Home</a></li>
+                <li><a class="nav-link" href="#about">Sobre mí</a></li>
+                <li><a class="nav-link" href="#singles">Sencillos</a></li>
+                <li><a class="nav-link" href="#albums">Álbumes</a></li>
+                <li><a class="nav-link" href="#gallery">Galería</a></li>
+                <li><a class="nav-link" href="#contact">Contacto</a></li>
             </ul>
-        </div>
-    </section>
+        </nav>
+    </header>
 
-    <section id="contact">
-        <h2>Contáctame</h2>
-        <div id="contactChannels">
-            <a id="Email" href="mailto:nestorvalenzuela4@gmail.com">
-                <img src="https://cdn1.iconfinder.com/data/icons/google-new-logos-1/32/gmail_new_logo-512.png"
-                    alt="emailLogo">
-            </a>
-            <a id="LinkedIn" href="https://www.linkedin.com/in/n%C3%A9stor-valenzuela-verdugo-a54598103/">
-                <img src="https://www.svgrepo.com/show/110195/linkedin.svg" alt="LinkedIn" class="linkedinLogo">
-            </a>
-            <a id="Spotify" href="https://open.spotify.com/intl-es/artist/31p67F1FDZA9jvwamGYaHq">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png"
-                    alt="spotifyLogo">
-            </a>
-            <a id="AppleMusic" href="https://music.apple.com/us/artist/n%C3%A9stor-valenzuela/1540445829">
-                <img src="https://w7.pngwing.com/pngs/490/27/png-transparent-apple-apple-music-music-shubhambhatia-thevectorframe-internet-icon.png"
-                    alt="appleMusicLogo">
-            </a>
-            <a id="Tidal" href="https://tidal.com/browse/artist/22196729">
-                <img src="https://cdn.iconscout.com/icon/free/png-512/free-tidal-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-vol-7-pack-logos-icons-3030867.png" alt="tidalLogo">
-            </a>
-            <a id="Youtube" href="https://www.youtube.com/@NestorValenzuelaMusic">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="youtubeLogo">
-            </a>
-        </div>
-    </section>
-    <footer>
-        <p>© Sitio Web diseñado y desarrollado por&nbsp;<a href="https://linkedin.com/in/ignaciov7/">Ignacio
-                Valenzuela</a></p>
+    <main id="main">
+
+        <!-- HERO -->
+        <section class="section hero" id="home">
+            <img class="hero__bg" src="assets/img/hero.webp" alt="" width="1080" height="720" fetchpriority="high">
+            <h1 class="hero__title">
+                <span>Néstor</span>
+                <span>Valenzuela</span>
+            </h1>
+            <p class="hero__tagline">Músico multiinstrumentista · Compositor</p>
+            <div class="hero__actions">
+                <a class="btn btn--primary" href="#singles">Escuchar</a>
+                <a class="btn" href="#contact">Contacto</a>
+            </div>
+        </section>
+
+        <!-- SOBRE MÍ -->
+        <section class="section about" id="about" aria-labelledby="about-title">
+            <div class="about__inner">
+                <div class="about__text">
+                    <h2 class="section-title" id="about-title">Biografía y estilo musical</h2>
+                    <p>Néstor Valenzuela es un artista chileno destacado por su versatilidad y talento musical.
+                        Músico multiinstrumentista y compositor, su capacidad para combinar diversos géneros le
+                        permite crear experiencias únicas para una amplia audiencia.</p>
+                    <p>Su repertorio incluye Hard Rock, Pop Rock melódico e interpretaciones acústicas íntimas,
+                        ofreciendo algo para todos los gustos.</p>
+                </div>
+                <figure class="about__photo">
+                    <img src="assets/img/about.webp" width="843" height="1265" loading="lazy"
+                        alt="Néstor Valenzuela cantando frente al micrófono, con chaqueta de cuero y guitarra">
+                </figure>
+            </div>
+        </section>
+
+        <!-- SENCILLOS -->
+        <section class="section" id="singles" aria-labelledby="singles-title">
+            <h2 class="section-title" id="singles-title">Sencillos</h2>
+            <div class="tracks">
+
+                <article class="track">
+                    <img class="track__cover" src="assets/img/cover-enamorado-de-ti.webp" width="600" height="600"
+                        loading="lazy" alt="Portada del sencillo «Enamorado de ti»: rosas rosadas">
+                    <h3 class="track__title">Enamorado de ti</h3>
+                    <div class="player">
+                        <button class="player__btn" type="button" aria-label="Reproducir «Enamorado de ti»">
+                            <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                            <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+                            </svg>
+                        </button>
+                        <div class="player__body">
+                            <input class="player__seek" type="range" min="0" max="0" step="1" value="0" disabled
+                                aria-label="Progreso de «Enamorado de ti»">
+                            <div class="player__time" aria-hidden="true">
+                                <span class="player__current">0:00</span>
+                                <span class="player__duration">0:00</span>
+                            </div>
+                        </div>
+                        <audio preload="metadata" src="assets/audio/enamorado-de-ti.mp3"></audio>
+                    </div>
+                </article>
+
+                <article class="track">
+                    <img class="track__cover" src="assets/img/cover-bonnie-and-clyde.webp" width="500" height="500"
+                        loading="lazy" alt="Portada del sencillo «Bonnie &amp; Clyde»: cartel de «Se busca» al estilo western">
+                    <h3 class="track__title">Bonnie &amp; Clyde</h3>
+                    <div class="player">
+                        <button class="player__btn" type="button" aria-label="Reproducir «Bonnie &amp; Clyde»">
+                            <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                            <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+                            </svg>
+                        </button>
+                        <div class="player__body">
+                            <input class="player__seek" type="range" min="0" max="0" step="1" value="0" disabled
+                                aria-label="Progreso de «Bonnie &amp; Clyde»">
+                            <div class="player__time" aria-hidden="true">
+                                <span class="player__current">0:00</span>
+                                <span class="player__duration">0:00</span>
+                            </div>
+                        </div>
+                        <audio preload="metadata" src="assets/audio/bonnie-and-clyde.mp3"></audio>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ÁLBUMES -->
+        <section class="section" id="albums" aria-labelledby="albums-title">
+            <h2 class="section-title" id="albums-title">Álbumes</h2>
+            <div class="albums">
+
+                <article class="album">
+                    <a class="album__link ext" target="_blank" rel="noopener noreferrer"
+                        href="https://www.youtube.com/watch?v=KVKgt1iR2SE&amp;list=OLAK5uy_np9qCmvlTEYPKnzazdgEMqGcghyIov57U">
+                        <img class="album__cover"
+                            src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d2/60/cf/d260cfa4-c059-9be4-9c2c-8ae514ba85f1/artwork.jpg/316x316bb.webp"
+                            width="316" height="316" loading="lazy" referrerpolicy="no-referrer"
+                            alt="Portada del álbum «7 Love Songs»">
+                        <h3 class="album__title">7 Love Songs</h3>
+                        <span class="album__cta">Escuchar en YouTube</span>
+                    </a>
+                </article>
+
+                <article class="album">
+                    <a class="album__link ext" target="_blank" rel="noopener noreferrer"
+                        href="https://www.youtube.com/watch?v=NBv7TPwlRZ8&amp;list=OLAK5uy_nbpZkqBaShFXyBjNJuCDfL0XiqC8Rmkoo">
+                        <img class="album__cover"
+                            src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/59/2e/43/592e43c3-ec29-b7a1-2bd4-80bbf27ef5e1/artwork.jpg/316x316bb.webp"
+                            width="316" height="316" loading="lazy" referrerpolicy="no-referrer"
+                            alt="Portada del EP «Néstor Valenzuela»">
+                        <h3 class="album__title">Néstor Valenzuela – EP</h3>
+                        <span class="album__cta">Escuchar en YouTube</span>
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- GALERÍA -->
+        <section class="section" id="gallery" aria-labelledby="gallery-title">
+            <h2 class="section-title" id="gallery-title">Galería</h2>
+            <div class="gallery">
+                <div class="gallery__track" tabindex="0" role="region" aria-label="Galería de fotos">
+                    <figure class="gallery__item">
+                        <img src="assets/img/gallery-1.webp" width="720" height="1080" loading="lazy"
+                            alt="Néstor tocando una guitarra eléctrica sunburst frente al micrófono">
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="assets/img/gallery-2.webp" width="843" height="1265" loading="lazy"
+                            alt="Primer plano de las manos de Néstor en el mástil de la guitarra, junto a un amplificador">
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="assets/img/gallery-3.webp" width="1080" height="720" loading="lazy"
+                            alt="Néstor con su guitarra en el escenario junto a una cantante, en blanco y negro">
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="assets/img/gallery-4.webp" width="843" height="1265" loading="lazy"
+                            alt="Néstor cantando con la mirada hacia un lado, guitarra al pecho">
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="assets/img/gallery-5.webp" width="843" height="1265" loading="lazy"
+                            alt="Retrato de Néstor cantando frente al micrófono">
+                    </figure>
+                </div>
+                <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Foto anterior">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M15 5l-7 7 7 7" />
+                    </svg>
+                </button>
+                <button class="gallery__nav gallery__nav--next" type="button" aria-label="Foto siguiente">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="section" id="contact" aria-labelledby="contact-title">
+            <h2 class="section-title" id="contact-title">Contacto</h2>
+            <p class="contact__lead">Escríbeme o encuentra mi música en tus plataformas favoritas.</p>
+            <ul class="contact__list">
+                <li><a class="btn btn--primary" href="mailto:nestorvalenzuela4@gmail.com">Correo</a></li>
+                <li><a class="btn ext" target="_blank" rel="noopener noreferrer"
+                        href="https://open.spotify.com/intl-es/artist/31p67F1FDZA9jvwamGYaHq">Spotify</a></li>
+                <li><a class="btn ext" target="_blank" rel="noopener noreferrer"
+                        href="https://music.apple.com/us/artist/n%C3%A9stor-valenzuela/1540445829">Apple Music</a></li>
+                <li><a class="btn ext" target="_blank" rel="noopener noreferrer"
+                        href="https://tidal.com/browse/artist/22196729">Tidal</a></li>
+                <li><a class="btn ext" target="_blank" rel="noopener noreferrer"
+                        href="https://www.youtube.com/@NestorValenzuelaMusic">YouTube</a></li>
+                <li><a class="btn ext" target="_blank" rel="noopener noreferrer"
+                        href="https://www.linkedin.com/in/n%C3%A9stor-valenzuela-verdugo-a54598103/">LinkedIn</a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year">2026</span> Néstor Valenzuela · Sitio web diseñado y desarrollado por
+            <a href="https://linkedin.com/in/ignaciov7/" target="_blank" rel="noopener noreferrer">Ignacio Valenzuela</a>
+        </p>
     </footer>
 
-    <script src="scripts.js"></script>
-
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>
